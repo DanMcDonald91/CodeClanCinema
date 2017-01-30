@@ -26,5 +26,9 @@ class Customer
 
    end
 
+   def self.all
+   end
+   
+
    end
 
