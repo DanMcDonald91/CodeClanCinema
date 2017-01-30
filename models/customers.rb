@@ -19,4 +19,8 @@ class Customer
     customer = SqlRunner.run( sql ).first
     @id = customer['id'].to_i
   end
+   def update
+    sql = "UPDATE films SET (title, price) = (#{@title}, (#{@price} WHERE id = (#{@id};"
+  SqlRunner.run(sql)
+
 end

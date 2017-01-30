@@ -1,9 +1,10 @@
 require('pg')
 require_relative('../db/sql_runner')
+require_relative('Films')
 
 class Ticket
-  attr_reader :id
-  attr_accessor :customer_id, :film_id
+  
+  attr_accessor :customer_id, :film_id, :id
 
   def initialize(options)
 
@@ -21,5 +22,9 @@ class Ticket
     @id = film['id'].to_i
 
   end
+
+   def update
+    sql = "UPDATE tickets SET (customer_id, film_id) = (#{@customer_id}, (#{@film_id} WHERE id = (#{@id};"
+  SqlRunner.run(sql)
 
 end

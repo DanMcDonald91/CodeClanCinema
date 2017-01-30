@@ -1,7 +1,7 @@
 require('pry-byebug')
 require('pg')
 require_relative('./Customers')
-require_relative('.//Films')
+require_relative('./Films')
 require_relative('./Tickets')
 
 
@@ -43,8 +43,6 @@ ticket3 = Ticket.new({ 'customer_id' => customer3.id, 'film_id' => @film3.id})
 
 
 ticket4 = Ticket.new({ 'customer_id' => customer4.id, 'film_id' => film4.id})
-
-
 
 tickets1.save
 tickets2.save
